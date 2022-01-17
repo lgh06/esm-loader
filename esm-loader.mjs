@@ -3,7 +3,7 @@
  * Add Core Method ESMLoader
  */
 
-export const moduleString = str => `data:text/javascript,${str}`;
+export const moduleString = str => `data:text/javascript,${encodeURIComponent(str)}`;
 export const ESMLoader = str => import(moduleString(str));
 export const strToESM = str => {
     console.log('deprecated: strToESM() use ESMLoader()')
